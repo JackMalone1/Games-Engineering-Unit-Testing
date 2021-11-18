@@ -1,20 +1,22 @@
-CXX			:= g++
-CXXFLAGS 	:= -std=c++11 -Wall -Wextra -Werror -g -I.
+CXX            := g++
+CXXFLAGS     := -std=c++11 -Wall -Wextra -Werror -g -I.
 
-MSG_START	:= "Build Started"
-MSG_END		:= "Build Complete"
-MSG_CLEAN	:= "Cleaning up"
+MSG_START    := "Build Started"
+MSG_END        := "Build Complete"
+MSG_CLEAN    := "Cleaning up"
 
-BUILD_DIR	:= ./bin
-SRC_DIR		:= ./src
+BUILD_DIR    := ./bin
+SRC_DIR        := ./src
 
-include		:= "C:/msys64/mingw64/include/cppunit"
+include        := "E:/msys64/mingw64/include/cppunit"
+include1    := "E:/msys64/mingw64/include/cppunit/ui/text"
+lib            := "E:/msys64/mingw64/lib"
 
-SRC			:= ./src/*.cpp
+SRC            := ./Src/*.cpp ../MainLine/src/LotteryProduction.cpp
 
-all			:= build
+all            := build
 
 build:
 	@echo ${MSG_START}
-	${CXX} -o TestFile ${SRC} -I${include} -I. -I./include
+	${CXX} -o TestFile ${SRC} -I${include} -I${include1} -I. -I./include -L${lib} -lmingw32 -llibcppunit
 	@echo ${MSG_END}
