@@ -12,11 +12,11 @@ include        := "E:/msys64/mingw64/include/cppunit"
 include1    := "E:/msys64/mingw64/include/cppunit/ui/text"
 lib            := "E:/msys64/mingw64/lib"
 
-SRC            := ./Src/*.cpp ../MainLine/src/LotteryProduction.cpp
+SRC            := ./Src/main.cpp ../MainLine/src/LotteryProduction.cpp
 
 all            := build
 
 build:
 	@echo ${MSG_START}
-	${CXX} -o TestFile ${SRC} -I${include} -I${include1} -I. -I./include -L${lib} -lmingw32 -llibcppunit
+	${CXX} -o MainFile ${SRC} -I${include} -I${include1} -I. -I./include -L${lib} -lmingw32 -llibcppunit
 	@echo ${MSG_END}

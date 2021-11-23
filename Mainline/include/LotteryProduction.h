@@ -1,4 +1,4 @@
-#include <Asserter.h>
+#pragma once
 #include <set>
 #include <stdio.h>
 #include <stdlib.h>
