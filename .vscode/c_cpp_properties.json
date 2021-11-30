@@ -7,7 +7,8 @@
                 "${workspaceFolder}/Mainline/include",
                 "E:/mys64/mingw64/include",
                 "E:/mys64/mingw64/include/cppunit",
-                "E:/mys64/mingw64/include/cppunit/ui/text"
+                "E:/mys64/mingw64/include/cppunit/ui/text",
+                "${workspaceFolder}/MainlineTest/include"
             ],
             "defines": [
                 "_DEBUG",

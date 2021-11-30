@@ -8,6 +8,7 @@ class LotteryProduction
 public:
     LotteryProduction(int num);
     std::set<int> generateLottery();
+    std::pair<bool, std::set<int>> validateLotteryFromInput(std::set<int> lottery);
 private:
     int amountOfRandomNumbers;
 };

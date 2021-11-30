@@ -10,6 +10,7 @@ class LotteryProductionTest : public CppUnit::TestFixture
 {
 private:
     LotteryProduction* lottery;
+    std::set<int> lotteryNumbers;
     const int LOTTERY_SIZE = 6;
 public:
     static CppUnit::Test* suite();
