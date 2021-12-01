@@ -12,7 +12,28 @@ void createLottery(LotteryProduction lottery)
     std::set<int> numbers;
     while(createAnotherLottery)
     {
-        lottery.generateLotteryFromInput(std::cin);
+        int amount = numberOfLotteryNumbers;
+        numbers.clear();
+        while(amount > 0)
+        {
+            std::cout << "Input 1 number between 1 and 46 inclusive." << std::endl;
+            int lotteryNumber = 0;
+            std::cin >> lotteryNumber;
+            if(lotteryNumber < 1 || lotteryNumber > 46)
+            {
+                std::cout << "Please input a number from 1 to 46" << std::endl;
+            }
+            else if(numbers.find(lotteryNumber) != numbers.end())
+            {
+                std::cout << "Number is already in the lottery, please input a new number tht is not in the lottery";
+            }
+            else
+            {
+                numbers.insert(lotteryNumber);
+                amount--;
+            }           
+        }
+        lottery.setLottery(numbers);
         if(lottery.validateLottery().first)
         {
             std::cout << "valid lottery" << std::endl;
@@ -42,11 +63,6 @@ int main()
 {
     srand(time(NULL));
     LotteryProduction lottery(6);
-    auto const& lotteryNumbers = lottery.generateLottery();
-    for(std::set<int>::iterator begin = lotteryNumbers.begin(); begin != lotteryNumbers.end(); ++begin)
-    {
-        std::cout << *begin << std::endl;
-    }
     createLottery(lottery);
     std::cin.get();
     return 0;

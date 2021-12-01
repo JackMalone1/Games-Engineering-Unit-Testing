@@ -13,7 +13,8 @@ void LotteryProductionTest::tearDown()
 void LotteryProductionTest::has6Numbers()
 {
     lotteryNumbers = {1, 2, 3, 5, 7, 24};
-    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLotteryFromInput(lotteryNumbers);
+    lottery->setLottery(lotteryNumbers);
+    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLottery();
     bool lotteryIsValid = lotteryPair.first;
     lotteryNumbers = lotteryPair.second;
 
@@ -28,7 +29,8 @@ void LotteryProductionTest::has6Numbers()
 void LotteryProductionTest::notHaving6NumbersInvalid()
 {
     lotteryNumbers = {1, 2, 3, 5, 7};
-    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLotteryFromInput(lotteryNumbers);
+    lottery->setLottery(lotteryNumbers);
+    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLottery();
     bool lotteryIsValid = lotteryPair.first;
     lotteryNumbers = lotteryPair.second;
 
@@ -44,7 +46,8 @@ void LotteryProductionTest::notHaving6NumbersInvalid()
 void LotteryProductionTest::allNumbersInRange()
 {
     lotteryNumbers = {1, 2, 3, 5, 7, 24};
-    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLotteryFromInput(lotteryNumbers);
+    lottery->setLottery(lotteryNumbers);
+    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLottery();
     lotteryNumbers = lotteryPair.second;
     bool valid = lotteryPair.first;
 
@@ -60,7 +63,8 @@ void LotteryProductionTest::allNumbersInRange()
 void LotteryProductionTest::allNumbersNotInRange()
 {
     lotteryNumbers = {111, 222, 333, 555, 777, 244};
-    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLotteryFromInput(lotteryNumbers);
+    lottery->setLottery(lotteryNumbers);
+    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLottery();
     lotteryNumbers = lotteryPair.second;
     bool valid = lotteryPair.first;
 
@@ -75,7 +79,8 @@ void LotteryProductionTest::allNumbersNotInRange()
 void LotteryProductionTest::allNumbersAreUnique()
 {
     lotteryNumbers = {1, 2, 3, 5, 7, 24};
-    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLotteryFromInput(lotteryNumbers);
+    lottery->setLottery(lotteryNumbers);
+    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLottery();
     lotteryNumbers = lotteryPair.second;
     bool valid = lotteryPair.first;
     CPPUNIT_ASSERT(valid == true);
@@ -95,7 +100,8 @@ void LotteryProductionTest::allNumbersAreUnique()
 void LotteryProductionTest::allNumbersAreNotUnique()
 {
     lotteryNumbers = {1, 2, 3, 5, 7, 7};
-    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLotteryFromInput(lotteryNumbers);
+    lottery->setLottery(lotteryNumbers);
+    std::pair<bool, std::set<int>> lotteryPair = lottery->validateLottery();
     lotteryNumbers = lotteryPair.second;
     bool valid = lotteryPair.first;
     CPPUNIT_ASSERT(valid == false);
