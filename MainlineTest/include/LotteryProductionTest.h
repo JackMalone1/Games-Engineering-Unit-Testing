@@ -3,7 +3,7 @@
 #include <TestCase.h>
 #include <TestSuite.h>
 #include <TestCaller.h>
-#include "LotteryProduction.h"
+#include "../../Mainline/include/LotteryProduction.h"
 #include <queue>
 
 class LotteryProductionTest : public CppUnit::TestFixture
@@ -17,5 +17,9 @@ public:
     void setUp();
     void tearDown();
     void has6Numbers();
-    void failedTest();
+    void notHaving6NumbersInvalid();
+    void allNumbersInRange();
+    void allNumbersNotInRange();
+    void allNumbersAreUnique();
+    void allNumbersAreNotUnique();
 };

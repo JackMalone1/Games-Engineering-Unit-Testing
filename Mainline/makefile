@@ -8,9 +8,9 @@ MSG_CLEAN    := "Cleaning up"
 BUILD_DIR    := ./bin
 SRC_DIR        := ./src
 
-include        := "E:/msys64/mingw64/include/cppunit"
-include1    := "E:/msys64/mingw64/include/cppunit/ui/text"
-lib            := "E:/msys64/mingw64/lib"
+include        := "C:/msys64/mingw64/include/cppunit"
+include1    := "C:/msys64/mingw64/include/cppunit/ui/text"
+lib            := "C:/msys64/mingw64/lib"
 
 SRC            := ./Src/main.cpp ../MainLine/src/LotteryProduction.cpp
 

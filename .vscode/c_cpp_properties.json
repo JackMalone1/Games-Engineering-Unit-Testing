@@ -5,10 +5,11 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/Mainline/include",
-                "E:/mys64/mingw64/include",
-                "E:/mys64/mingw64/include/cppunit",
-                "E:/mys64/mingw64/include/cppunit/ui/text",
-                "${workspaceFolder}/MainlineTest/include"
+                "C:/msys64/mingw64/include",
+                "C:/msys64/mingw64/include/cppunit",
+                "C:/msys64/mingw64/include/cppunit/ui/text",
+                "${workspaceFolder}/MainlineTest/include",
+                "C:/msys64/mingw64/include/cppunit"
             ],
             "defines": [
                 "_DEBUG",
@@ -16,7 +17,7 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.18362.0",
-            "compilerPath": "C:/MinGW/bin/g++.exe",
+            "compilerPath": "C:/msys64/mingw64/bin/g++.exe",
             "cStandard": "c17",
             "cppStandard": "c++11",
             "intelliSenseMode": "gcc-x64"
